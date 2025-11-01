@@ -1,0 +1,96 @@
+.welcome {
+  height: 390px;
+  width: 100vw;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: end;
+  border-bottom: 1px solid white;
+}
+
+.container-welcome-p {
+  word-break: break-all;
+  position: relative;
+  top: 5.5rem;
+  border: 1px solid white;
+  font-size: 1.5vw;
+  padding: 1.3%;
+  text-align: center;
+  align-items: center;
+  max-width: 54.5%;
+  min-width: 54.5%;
+  min-height: 70%;
+  left: 7%;
+  font-family: "Courier New", monospace;
+  border-radius: 40px 0px;
+  white-space: pre-line;
+  line-height: 0.6;
+}
+
+.welcome-welcome {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  position: fixed;
+  left: 0;
+  top: 398px;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  background: #333;
+  color: white;
+  padding: 20px 10px;
+  opacity: 80%;
+}
+
+.welcome span {
+  font-size: clamp(2rem, 4vw, 2rem);
+  font-weight: 900;
+  color: transparent;
+  background: linear-gradient(45deg, #414141, #ffffff, #414141);
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: neonFlow 9s ease-in-out infinite, float 10s ease-in-out infinite;
+  line-height: 1;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+@keyframes neonFlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.welcome-container {
+  height: 95%;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.welcome img {
+  height: 364px;
+}
+
+.welcome-container-text {
+  position: relative;
+  margin-left: -26%;
+}
+.welcome-container-text h1 {
+  position: relative;
+  margin: 0%;
+  font-size: clamp(2rem, 4vw, 2rem);
+  bottom: 78px;
+}
+.welcome-container-text h2 {
+  position: relative;
+  margin: 0%;
+  font-size: clamp(3rem, 6vw, 3rem);
+  bottom: 110px;
+}

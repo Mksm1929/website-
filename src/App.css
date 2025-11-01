@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Wild';
+  src: url('./assets/fonts/Menyaka.ttf') format('truetype');
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-content {
+    position: absolute;
+    left: 45%;
+    top: 356px;
+}
