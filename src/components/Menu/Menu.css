@@ -1,25 +1,31 @@
-.ant-menu {
+.ant-menu-horizontal {
      background-color: rgb(63, 63, 63);
-     border-radius: 10px;
+     border-radius: 10px !important;
+     overflow: hidden;
 }
-
 
 .ant-menu-item {
      text-align: center;
+     background-color: rgb(63, 63, 63) !important;
 }
 
-:where(.css-dev-only-do-not-override-11mmrso).ant-menu-dark.ant-menu-horizontal >.ant-menu-item-selected {
-     border-radius: 10px 0px 0px 10px;
-     color: rgb(255, 255, 255);
+.ant-menu-item:hover {
+     text-align: center;
+     background-color: rgb(53, 53, 53) !important;
 }
 
-:where(.css-dev-only-do-not-override-11mmrso).ant-menu-dark.ant-menu-horizontal >.ant-menu-submenu-selected {
-     border-radius: 0px 10px 10px 0px;
-     color: rgb(255, 255, 255);
+.ant-menu-item-selected {
+     background-color: rgb(37, 37, 37) !important;
 }
 
-:where(.css-dev-only-do-not-override-11mmrso).ant-menu-horizontal {
+.ant-menu-submenu-selected {
+     background-color: rgb(37, 37, 37) !important;
+}
+
+.ant-menu-submenu-popup {
      opacity: 0.9;
 }
 
-
+.ant-menu-vertical {
+     background-color: rgb(63, 63, 63) !important;
+}
