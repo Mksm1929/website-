@@ -2,11 +2,10 @@ import { useState } from "react";
 import "./TodoList.css";
 
 type Todo = {
-  id?: number,
-  text?: string,
-  completed?: boolean,
-}
-
+  id?: number;
+  text?: string;
+  completed?: boolean;
+};
 
 export const TodoList: React.FC<Todo> = () => {
   const [inputValue, setInputValue] = useState("");
@@ -23,15 +22,16 @@ export const TodoList: React.FC<Todo> = () => {
         text: inputValue,
         completed: false,
       };
-      console.log(newTodo.id)
-      setTodos(prevTodos => [...prevTodos, newTodo]);
+      setTodos((prevTodos) => [...prevTodos, newTodo]);
       setInputValue("");
     }
   };
 
   const handleToggleTodo = (id?: number) => {
-    setTodos(prevTodos => 
-      prevTodos.map((todo) => todo.id === id ? {...todo, completed: !todo.completed} : todo)
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
     );
   };
 
@@ -41,7 +41,7 @@ export const TodoList: React.FC<Todo> = () => {
 
   return (
     <div className="todo-list-container">
-      <h1>My Todo List</h1>
+      <h1>Список задач</h1>
       <div className="todo-input-container">
         <input
           className="todo-input"
@@ -50,12 +50,15 @@ export const TodoList: React.FC<Todo> = () => {
           onChange={handleInputChange}
           placeholder="Введите задачу..."
         />
-        <button className="add-button" onClick={handleAddTodo}>Добавить</button>
+        <button className="add-button" onClick={handleAddTodo}>
+          Добавить
+        </button>
       </div>
       <ul className="todo-list">
         {todos.map((todo) => (
           <li className="todo-item" key={todo.id}>
-            <span className="todo-text"
+            <span
+              className="todo-text"
               style={{
                 textDecoration: todo.completed ? "line-through" : "none",
               }}
@@ -63,12 +66,15 @@ export const TodoList: React.FC<Todo> = () => {
             >
               {todo.text}
             </span>
-            <button className="delete-button" onClick={() => handleDeleteTodo(todo.id)}>X</button>
+            <button
+              className="delete-button"
+              onClick={() => handleDeleteTodo(todo.id)}
+            >
+              X
+            </button>
           </li>
         ))}
       </ul>
     </div>
   );
 };
-
-

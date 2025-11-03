@@ -1,0 +1,25 @@
+.ant-menu {
+     background-color: rgb(63, 63, 63);
+     border-radius: 10px;
+}
+
+
+.ant-menu-item {
+     text-align: center;
+}
+
+:where(.css-dev-only-do-not-override-11mmrso).ant-menu-dark.ant-menu-horizontal >.ant-menu-item-selected {
+     border-radius: 10px 0px 0px 10px;
+     color: rgb(255, 255, 255);
+}
+
+:where(.css-dev-only-do-not-override-11mmrso).ant-menu-dark.ant-menu-horizontal >.ant-menu-submenu-selected {
+     border-radius: 0px 10px 10px 0px;
+     color: rgb(255, 255, 255);
+}
+
+:where(.css-dev-only-do-not-override-11mmrso).ant-menu-horizontal {
+     opacity: 0.9;
+}
+
+

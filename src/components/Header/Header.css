@@ -39,6 +39,7 @@
 .header-nav button {
     display: block;
     font-family: 'Wild';
+    width: 150px;
 }
 
 .popup-container {
@@ -48,8 +49,8 @@
 
 .popup {
   position: absolute;
-  top: 6%;
-  right: 135px;
+  top: 40px;
+  right: 158px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 10px 5px;
   z-index: 1000;
@@ -58,5 +59,7 @@
   flex-direction: column;
   gap: 5px;
 }
+
+
 
 
