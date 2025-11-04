@@ -1,19 +1,19 @@
-import { useState } from "react";
+
 import "./TodoList.css";
+import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
+import { addTodo, toggleTodo, deleteTodo } from "./todosSlice";
+import { useState } from "react";
 
-type Todo = {
-  id?: number;
-  text?: string;
-  completed?: boolean;
-};
 
-export const TodoList: React.FC<Todo> = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [todos, setTodos] = useState<Todo[]>([]);
+export const TodoList: React.FC = () => {
+   const [inputValue, setInputValue] = useState("");
+  const {  todos } = useAppSelector((state) => state.todos);
+  const dispatch = useAppDispatch();
 
   const handleInputChange = (e: any) => {
     setInputValue(e.target.value);
   };
+
 
   const handleAddTodo = () => {
     if (inputValue.trim() !== "") {
@@ -22,21 +22,21 @@ export const TodoList: React.FC<Todo> = () => {
         text: inputValue,
         completed: false,
       };
-      setTodos((prevTodos) => [...prevTodos, newTodo]);
+      dispatch(addTodo(newTodo));
       setInputValue("");
     }
   };
 
   const handleToggleTodo = (id?: number) => {
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
+    if (id) {
+      dispatch(toggleTodo(id));
+    }
   };
 
   const handleDeleteTodo = (id?: number) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    if (id) {
+      dispatch(deleteTodo(id));
+    }
   };
 
   return (

@@ -34,48 +34,38 @@
   text-orientation: upright;
   position: fixed;
   left: 0;
-  top: 398px;
+  top: 50%;
   transform: translateY(-50%);
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 5px;
   background: #333;
   color: white;
   padding: 20px 10px;
-  opacity: 80%;
+  opacity: 96%;
 }
 
 .welcome span {
-  font-size: clamp(2rem, 4vw, 2rem);
+  font-size: clamp(2em, 4vw, 2em);
   font-weight: 900;
   color: transparent;
   background: linear-gradient(45deg, #414141, #ffffff, #414141);
   -webkit-background-clip: text;
   background-clip: text;
-  animation: neonFlow 9s ease-in-out infinite, float 10s ease-in-out infinite;
   line-height: 1;
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 5px;
 }
-@keyframes neonFlow {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
 
 .welcome-container {
-  height: 95%;
+  height: 390px;
   padding-right: 5%;
   padding-left: 5%;
 }
 
 .welcome img {
-  height: 364px;
+  height: 390px;
 }
 
 .welcome-container-text {
