@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import "./Clicker.css"; 
+import "./Clicker.css";
+import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
+import { addRecord } from "./ClickerSlice";
 
 export const Clicker = () => {
   const [second, setSecond] = useState(10);
   const [counter, setCounter] = useState(0);
-  const [highScore, setHighScore] = useState(0);
+  const dispatch = useAppDispatch();
+  const { highScore } = useAppSelector((state) => state.clicker);
 
   useEffect(() => {
     let interval: any;
@@ -18,9 +21,11 @@ export const Clicker = () => {
     };
   }, [second]);
 
-  if (counter > highScore) {
-    setHighScore(counter);
-  }
+  useEffect(() => {
+    if (second === 0 && counter > 0) {
+      dispatch(addRecord({ count: counter }));
+    }
+  }, [second, counter, dispatch]);
 
   const handleClick = () => {
     if (second > 0) {
@@ -33,7 +38,7 @@ export const Clicker = () => {
     setCounter(0);
   };
 
-  
+
   const getTimerClass = () => {
     if (second <= 3) return "timer-text timer-critical";
     if (second <= 6) return "timer-text timer-warning";
@@ -41,6 +46,10 @@ export const Clicker = () => {
   };
 
   const progressWidth = (second / 10) * 100;
+
+  const bestScore = highScore.length > 0
+    ? Math.max(...highScore.map(record => record.count || 0))
+    : 0;
 
   return (
     <div className="clicker-container">
@@ -85,7 +94,7 @@ export const Clicker = () => {
             Ваш результат: <span className="high-score">{counter}</span>
           </p>
           <p className="result-message">
-            Лучший результат: <span className="high-score">{highScore}</span>
+            Лучший результат: <span className="high-score">{bestScore}</span>
           </p>
         </div>
       )}

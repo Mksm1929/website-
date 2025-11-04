@@ -3,12 +3,20 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from 'react-redux';
+import { store } from "./provider/store.ts";
 
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+    </Provider>
   </StrictMode>
 );
+
+
+// добавить навыки
+// добавить иконки к приложениям
