@@ -9,8 +9,9 @@
   color: white;
   border-radius: 15px;
   position: relative;
-  top: 35px; 
-  right: 200px;
+  left: 32%;
+  top: 40px; 
+  width: 30%;
 }
 
 .clicker-title {

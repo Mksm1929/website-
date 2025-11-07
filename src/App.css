@@ -9,6 +9,7 @@
 
 .container-content {
     position: absolute;
-    left: 45%;
     top: 356px;
+    width: 98%;
+    height: 100%;
 }

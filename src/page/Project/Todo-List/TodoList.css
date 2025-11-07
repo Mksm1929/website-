@@ -1,8 +1,8 @@
 .todo-list-container {
   position: relative;
   top: 50px;
-  right: 50%;
   max-width: 600px;
+  min-width: 600px;
   margin: 0 auto;
   padding: 10px 20px 20px 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
