@@ -6,8 +6,8 @@ import { useState } from "react";
 
 
 export const TodoList: React.FC = () => {
-   const [inputValue, setInputValue] = useState("");
-  const {  todos } = useAppSelector((state) => state.todos);
+  const [inputValue, setInputValue] = useState("");
+  const { todos } = useAppSelector((state) => state.todos);
   const dispatch = useAppDispatch();
 
   const handleInputChange = (e: any) => {
@@ -56,7 +56,7 @@ export const TodoList: React.FC = () => {
       </div>
       <ul className="todo-list">
         {todos.map((todo) => (
-          <li className="todo-item" key={todo.id}>
+          <li className="todo-item" key={(todo.id)}>
             <span
               className="todo-text"
               style={{

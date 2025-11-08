@@ -1,24 +1,37 @@
-.card-container {
+.cards {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20%; 
+  grid-template-columns: minmax(100px, 20%) minmax(100px, 20%) minmax(100px, 20%) minmax(100px, 20%);
   justify-content: center;
   position: relative;
+  padding: 50px 0px;
   top: 80px;
-  column-gap: 3%;
-  row-gap: 40px;
+  column-gap: 10px;
+  row-gap: 10px;
   width: 90%;
   left: 6%;
   box-shadow: 1px 1px 20px 1px rgba(245, 245, 245, 0.1);
-  padding: 50px 0px;
   border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: minmax(100px, 20%) minmax(100px, 20%);
+  }
 }
 
 .card {
   position: relative;
-  width: 100%;
-  height: 100px; 
+  height: 100px;
   color: white;
   perspective: 1000px;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+}
+
+@media (max-width: 500px) {
+  .card {
+    height: 50px;
+  }
 }
 
 .card__inner {
@@ -27,10 +40,11 @@
   height: 100%;
   transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform-style: preserve-3d;
+  border-radius: inherit;
 }
 
 .card:hover .card__inner {
-  transform: rotateY(540deg) scale(1.15);
+  transform: rotateY(540deg);
 }
 
 .card__front {
@@ -42,10 +56,18 @@
   align-items: center;
   justify-content: center;
   backface-visibility: hidden;
-  border-radius: 10px;
   font-size: 24px;
   font-weight: bold;
   font-family: 'BlackOps';
+  border-radius: inherit;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+@media (max-width: 500px) {
+  .card__front {
+    font-size: 15px;
+  }
 }
 
 .card__back {
@@ -57,9 +79,16 @@
   align-items: center;
   justify-content: center;
   backface-visibility: hidden;
-  transform: rotateY(180deg); 
-  border-radius: 10px;
+  transform: rotateY(180deg);
   font-size: 24px;
   font-weight: bold;
   font-family: 'BlackOps';
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+@media (max-width: 500px) {
+  .card__back {
+    font-size: 15px;
+  }
 }

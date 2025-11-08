@@ -8,23 +8,19 @@ type Cards = {
 export const Skills: React.FC<Cards> = () => {
 
 
-
   return (
-    <div className="card-container">
-      {skillsData.map((e, id) => {
-        if (id === e.id) {
-          return <div className="card">
-            <div className="card__inner">
-              <div className="card__front">
-                {e.name}
-              </div>
-              <div className="card__back">
-                {e.name}
-              </div>
+    <div className="cards">
+      {skillsData.map((e, i) => {
+        return <div key={`${i + e}${Date.now()}`} className="card">
+          <div className="card__inner">
+            <div className="card__front">
+              <span>{e}</span>
+            </div>
+            <div className="card__back">
+              {e}
             </div>
           </div>
-        }
-
+        </div>
       })
       }
 
