@@ -2,6 +2,10 @@
   font-family: 'Wild';
   src: url('./assets/fonts/Menyaka.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'BlackOps';
+  src: url('./assets/fonts/BlackOpsOne.ttf') format('truetype');
+}
 .container {
     display: flex;
     flex-direction: column;
