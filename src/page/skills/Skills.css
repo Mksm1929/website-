@@ -4,7 +4,7 @@
   justify-content: center;
   position: relative;
   top: 80px;
-  column-gap: 5%;
+  column-gap: 3%;
   row-gap: 40px;
   width: 90%;
   left: 6%;
@@ -45,6 +45,7 @@
   border-radius: 10px;
   font-size: 24px;
   font-weight: bold;
+  font-family: 'BlackOps';
 }
 
 .card__back {
@@ -60,4 +61,5 @@
   border-radius: 10px;
   font-size: 24px;
   font-weight: bold;
+  font-family: 'BlackOps';
 }
