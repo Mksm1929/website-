@@ -1,0 +1,14 @@
+.footer-contact {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-contact-icon {
+    font-size: 30px;
+}
+
+@media (max-width: 500px) {
+    .footer-contact-icon {
+        font-size: 23px;
+    }
+}

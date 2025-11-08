@@ -2,6 +2,7 @@ import "./WelcomePage.css";
 import Portret from "../../assets/partfolio.jpg";
 import { TextWriter } from "../TextWriter";
 
+
 export const WelcomePage = () => {
   return (
     <div className="container-welcome">
@@ -17,6 +18,7 @@ export const WelcomePage = () => {
         />
       </div>
       <div className="welcome">
+
         <div className="welcome-welcome">
           <span>Frontend</span>
         </div>

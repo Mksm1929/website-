@@ -29,6 +29,12 @@
   line-height: 0.6;
 }
 
+@media (max-width: 950px) {
+  .container-welcome-p {
+    top: 400px;
+  }
+}
+
 .welcome-welcome {
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -72,6 +78,13 @@
   position: relative;
   margin-left: -26%;
 }
+
+@media (max-width: 500px) {
+  .welcome-container-text {
+    margin-left: 10px;
+  }
+}
+
 .welcome-container-text h1 {
   position: relative;
   margin: 0%;

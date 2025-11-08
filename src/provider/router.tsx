@@ -4,7 +4,6 @@ import { Clicker } from "../page/Project/Clicker/Clicker";
 import { Skills } from "../page/skills/Skills";
 
 
-
 export const Router = () => {
   return (
     <Routes>
