@@ -10,22 +10,23 @@
   border-bottom: 1px solid white;
 }
 
+
 .container-welcome-p {
   word-break: break-all;
   position: relative;
-  bottom: -80px;
+  bottom: -50px;
   border: 1px solid white;
-  font-size: 2.4vw;
+  font-size: 2.5vw;
   padding: 10px 10px;
   text-align: center;
   align-items: center;
-  font-family: "Courier New", monospace;
+  font-family: "Courier New" ;
   border-radius: 20px;
   white-space: pre-line;
   line-height: 0.6;
   width: 90%;
   box-sizing: border-box;
-  left: 6%;
+  left: 4%;
 }
 
 @media (min-width: 870px) {
@@ -55,7 +56,7 @@
   opacity: 96%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 870px) {
   .welcome-frontend {
     position: relative;
     display: flex;

@@ -1,6 +1,6 @@
 .todo-list-container {
   position: relative;
-  top: 50px;
+  bottom: 50px;
   max-width: 600px;
   margin: 0 auto;
   padding: 10px 20px 20px 20px;
@@ -13,9 +13,10 @@
   word-break: break-word;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 870px) {
   .todo-list-container {
     right: 1%; 
+    top: 80px;
   }
 }
 

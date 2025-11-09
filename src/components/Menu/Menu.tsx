@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DesktopOutlined, PieChartOutlined } from "@ant-design/icons";
+
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
 import "./Menu.css";
@@ -8,11 +8,10 @@ import { useNavigate } from "react-router-dom";
 type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
-  { key: "1", icon: <PieChartOutlined />, label: "Навыки", onClick: () => {}  },
+  { key: "1", label: "Навыки", onClick: () => {}  },
   {
     key: "sub1",
     label: "Проекты",
-    icon: <DesktopOutlined />,
     children: [
       { key: "2", label: "Todo-List" },
       { key: "3", label: "Clicker" },

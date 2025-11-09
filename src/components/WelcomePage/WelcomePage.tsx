@@ -1,6 +1,5 @@
 import "./WelcomePage.css";
 import Portret from "../../assets/partfolio.jpg";
-import { TextWriter } from "../TextWriter";
 
 
 export const WelcomePage = () => {

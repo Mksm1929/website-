@@ -4,10 +4,17 @@
      overflow: hidden;
 }
 
+@media (max-width: 870px) {
+     .ant-menu-horizontal {
+          line-height: 33px;
+     }
+}
+
 .ant-menu-item {
      text-align: center;
      background-color: rgb(63, 63, 63) !important;
 }
+
 
 .ant-menu-item:hover {
      text-align: center;
@@ -29,3 +36,5 @@
 .ant-menu-vertical {
      background-color: rgb(63, 63, 63) !important;
 }
+
+
