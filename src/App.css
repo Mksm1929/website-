@@ -9,9 +9,10 @@
 .app {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
-.app-content {
+.app-content {   
     position: absolute;
     top: 356px;
     width: 98%;

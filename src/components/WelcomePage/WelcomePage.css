@@ -1,6 +1,6 @@
 .welcome {
   height: 390px;
-  width: 100vw;
+  left: 0;
   z-index: -1;
   position: absolute;
   top: 0;
@@ -13,46 +13,65 @@
 .container-welcome-p {
   word-break: break-all;
   position: relative;
-  top: 5.5rem;
+  bottom: -80px;
   border: 1px solid white;
-  font-size: 1.5vw;
-  padding: 1.3%;
+  font-size: 2.4vw;
+  padding: 10px 10px;
   text-align: center;
   align-items: center;
-  max-width: 54.5%;
-  min-width: 54.5%;
-  min-height: 70%;
-  left: 7%;
   font-family: "Courier New", monospace;
-  border-radius: 40px 0px;
+  border-radius: 20px;
   white-space: pre-line;
   line-height: 0.6;
+  width: 90%;
+  box-sizing: border-box;
+  left: 6%;
 }
 
-@media (max-width: 950px) {
+@media (min-width: 870px) {
   .container-welcome-p {
-    top: 400px;
+    min-width: 60%;
+    bottom: 250px;
+    width: calc(100% - 500px);
+    border-radius: 40px 0px;
+    left: 5%;
+    font-size: 1.5vw;
   }
 }
 
-.welcome-welcome {
+.welcome-frontend {
   writing-mode: vertical-rl;
   text-orientation: upright;
   position: fixed;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.5em;
+  font-size: 20px;
   font-weight: bold;
-  letter-spacing: 5px;
+  letter-spacing: 10px;
   background: #333;
   color: white;
   padding: 20px 10px;
   opacity: 96%;
 }
 
+@media (max-width: 800px) {
+  .welcome-frontend {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+  }
+
+  .welcome {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .welcome span {
-  font-size: clamp(2em, 4vw, 2em);
+  font-size: clamp(20px, 4vw, 3em);
   font-weight: 900;
   color: transparent;
   background: linear-gradient(45deg, #414141, #ffffff, #414141);
@@ -91,6 +110,7 @@
   font-size: clamp(2rem, 4vw, 2rem);
   bottom: 78px;
 }
+
 .welcome-container-text h2 {
   position: relative;
   margin: 0%;
