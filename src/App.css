@@ -6,6 +6,14 @@
   font-family: 'BlackOps';
   src: url('./assets/fonts/BlackOpsOne.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Porshe';
+  src: url('./assets/fonts/Porsche.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Danger';
+  src: url('./assets/fonts/Danger.ttf') format('truetype');
+}
 .app {
     display: flex;
     flex-direction: column;

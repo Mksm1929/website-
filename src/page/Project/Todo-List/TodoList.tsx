@@ -3,6 +3,7 @@ import "./TodoList.css";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { addTodo, toggleTodo, deleteTodo } from "./todosSlice";
 import { useState } from "react";
+import type { KeyboardEvent } from 'react';
 
 
 export const TodoList: React.FC = () => {
@@ -27,6 +28,10 @@ export const TodoList: React.FC = () => {
     }
   };
 
+  const onKeyEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") return handleAddTodo()
+  };
+
   const handleToggleTodo = (id?: number) => {
     if (id) {
       dispatch(toggleTodo(id));
@@ -44,6 +49,7 @@ export const TodoList: React.FC = () => {
       <h1>Список задач</h1>
       <div className="todo-input-container">
         <input
+          onKeyPress={onKeyEnter}
           className="todo-input"
           type="text"
           value={inputValue}
