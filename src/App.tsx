@@ -4,7 +4,7 @@ import { Header } from "./components/Header/Header";
 import { Router } from "./provider/router";
 import { Footer } from "./components/Footer/Footer";
 import "./AppCommon.css";
-import { TextWriter } from "./components/TextWriter";
+import { About } from "./page/About/About";
 
 
 function App() {
@@ -13,17 +13,7 @@ function App() {
       <Header />
       <WelcomePage />
       <div className="app-content">
-              <div className="container-welcome-p">
-                <TextWriter
-                  text={`Начинающий Frontend-разработчик с уверенными знаниями\r\n
-                  HTML, CSS, JavaScript и базовым опытом работы с React.\r\n
-                  Читаю профильную литературу, например "Чистый код".\n
-                  Быстро обучаюсь, умею работать с Git.\n
-                  Ищу первую работу в команде,\n
-                  где смогу развиваться и приносить пользу.`}
-                  speed={25}
-                />
-              </div>
+        <About />
         <Router />
         <div className="app-footer">
           <Footer />
@@ -34,5 +24,3 @@ function App() {
 }
 
 export default App;
-
-

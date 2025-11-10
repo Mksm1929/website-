@@ -1,0 +1,28 @@
+.container-welcome-p {
+  word-break: break-all;
+  position: relative;
+  bottom: -50px;
+  border: 1px solid white;
+  font-size: 3.2vw;
+  padding: 10px 10px;
+  text-align: center;
+  align-items: center;
+  font-family: "Danger" ;
+  border-radius: 20px;
+  white-space: pre-line;
+  line-height: 0.6;
+  width: 90%;
+  box-sizing: border-box;
+  left: 4%;
+}
+
+@media (min-width: 870px) {
+  .container-welcome-p {
+    min-width: 60%;
+    bottom: 250px;
+    width: calc(100% - 500px);
+    border-radius: 40px 0px;
+    left: 5%;
+    font-size: 2.1vw;
+  }
+}
