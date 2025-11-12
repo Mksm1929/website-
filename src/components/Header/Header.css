@@ -9,8 +9,10 @@
 }
 
 @keyframes gentleGlow {
-    0%, 100% {
-        text-shadow: 
+
+    0%,
+    100% {
+        text-shadow:
             0 0 0px #fff,
             0 0 0px #fff,
             0 0 0px #fff,
@@ -19,8 +21,9 @@
             0 0 0px #0ff;
         opacity: 0.3;
     }
+
     50% {
-        text-shadow: 
+        text-shadow:
             0 0 5px #fff,
             0 0 10px #fff,
             0 0 15px #fff,
@@ -30,35 +33,3 @@
         opacity: 1;
     }
 }
-
-.header-nav {
-    display: flex;
-    gap: 5px;
-}
-
-.header-nav button {
-    display: block;
-    width: 150px;
-}
-
-.popup-container {
-    position: relative;
-    display: inline-block;
-}
-
-.popup {
-  position: absolute;
-  top: 40px;
-  right: 158px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 10px 5px;
-  z-index: 1000;
-  min-width: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-
-
-

@@ -4,13 +4,15 @@ import type { MenuProps } from "antd";
 import { Menu } from "antd";
 import "./Menu.css";
 import { useNavigate } from "react-router-dom";
+import { DeploymentUnitOutlined, DesktopOutlined } from "@ant-design/icons";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
-  { key: "1", label: "Навыки", onClick: () => {}  },
+  { key: "1", icon: <DeploymentUnitOutlined />, label: "Навыки", onClick: () => { } },
   {
     key: "sub1",
+    icon: <DesktopOutlined />,
     label: "Проекты",
     children: [
       { key: "2", label: "Todo-List" },
