@@ -2,6 +2,8 @@
      background-color: rgb(63, 63, 63);
      border-radius: 10px !important;
      overflow: hidden;
+     text-align: center;
+     align-items: center;
 }
 
 @media (max-width: 870px) {
@@ -36,5 +38,3 @@
 .ant-menu-vertical {
      background-color: rgb(63, 63, 63) !important;
 }
-
-
