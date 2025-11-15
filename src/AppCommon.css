@@ -3,9 +3,21 @@
 }
 
 .color-white {
-   color: white; 
+    color: white;
 }
 
 .color-green {
     color: green;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.gap-5px {
+    gap: 5px;
+}
+
+.full-width {
+ width: 100%;
 }

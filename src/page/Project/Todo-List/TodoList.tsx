@@ -62,22 +62,24 @@ export const TodoList: React.FC = () => {
       </div>
       <ul className="todo-list">
         {todos.map((todo) => (
-          <li className="todo-item" key={(todo.id)}>
-            <span
-              className="todo-text"
-              style={{
-                textDecoration: todo.completed ? "line-through" : "none",
-              }}
-              onClick={() => handleToggleTodo(todo.id)}
-            >
-              {todo.text}
-            </span>
-            <button
-              className="delete-button"
-              onClick={() => handleDeleteTodo(todo.id)}
-            >
-              X
-            </button>
+          <li key={(todo.id)}>
+            <div className="todo">
+              <div className={`todo-item-status todo-item-status__${todo.completed ? "completed" : "pending"}`} />
+              <div className="todo-item" >
+                <span
+                  className="todo-text"
+                  onClick={() => handleToggleTodo(todo.id)}
+                >
+                  {todo.text}
+                </span>
+                <button
+                  className="delete-button"
+                  onClick={() => handleDeleteTodo(todo.id)}
+                >
+                  X
+                </button>
+              </div>
+            </div>
           </li>
         ))}
       </ul>
