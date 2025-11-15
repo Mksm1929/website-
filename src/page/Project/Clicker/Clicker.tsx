@@ -4,14 +4,14 @@ import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { addRecord } from "./ClickerSlice";
 
 export const Clicker = () => {
-  const [second, setSecond] = useState(10);
+  const [second, setSecond] = useState(-1);
   const [counter, setCounter] = useState(0);
   const dispatch = useAppDispatch();
   const { highScore } = useAppSelector((state) => state.clicker);
 
   useEffect(() => {
     let interval: any;
-    if (second !== 0) {
+    if (second > 0) {
       interval = setInterval(() => {
         setSecond((prev) => prev - 1);
       }, 1000);
@@ -22,8 +22,8 @@ export const Clicker = () => {
   }, [second]);
 
   useEffect(() => {
-    if (second === 0 && counter > 0) {
-      dispatch(addRecord({ count: counter }));
+    if (second === 0) {
+      dispatch(addRecord(counter));
     }
   }, [second, counter, dispatch]);
 
@@ -48,16 +48,16 @@ export const Clicker = () => {
   const progressWidth = (second / 10) * 100;
 
   const bestScore = highScore.length > 0
-    ? Math.max(...highScore.map(record => record.count || 0))
+    ? Math.max(...highScore)
     : 0;
-
+  
   return (
     <div className="clicker-container">
       <h1 className="clicker-title">Кликер</h1>
       <p className="clicker-subtitle">Жми как можно быстрее!</p>
 
       <div className="timer-container">
-        <h1 className={getTimerClass()}>Время: {second}</h1>
+        <h1 className={getTimerClass()}>Время: {second >= 0 ? second : 0}</h1>
       </div>
 
       <div className="progress-bar">
@@ -72,7 +72,7 @@ export const Clicker = () => {
           className="clicker-button restart-button"
           onClick={handleClickStart}
         >
-          Начать заново
+          {highScore.length > 0 ? 'Начать заново' : 'Начать'}
         </button>
         <button
           className="clicker-button click-button"
