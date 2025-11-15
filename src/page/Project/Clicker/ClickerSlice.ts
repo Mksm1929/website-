@@ -1,12 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-export interface Record {
-    count: number;
-}
 
 interface RecordState {
-    highScore: Record[];
+    highScore: number[];
 }
 
 const initialState: RecordState = {
@@ -17,7 +14,7 @@ const clickerSlice = createSlice({
     name: 'clicker',
     initialState,
     reducers: {
-        addRecord: (state, action: PayloadAction<Record>) => {
+        addRecord: (state, action: PayloadAction<number>) => {
             state.highScore.push(action.payload);
         },
     }
