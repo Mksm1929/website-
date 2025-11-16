@@ -4,10 +4,12 @@ import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { addTodo, toggleTodo, deleteTodo } from "./todosSlice";
 import { useState } from "react";
 import type { KeyboardEvent } from 'react';
+import { Modal } from "antd";
 
 
 export const TodoList: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState<number | null>(null);
   const { todos } = useAppSelector((state) => state.todos);
   const dispatch = useAppDispatch();
 
@@ -39,13 +41,27 @@ export const TodoList: React.FC = () => {
   };
 
   const handleDeleteTodo = (id?: number) => {
-    if (id) {
-      dispatch(deleteTodo(id));
+    id !== undefined && setIsModalOpen(id);
+  };
+
+  const handleOk = () => {
+    if (isModalOpen) {
+      dispatch(deleteTodo(isModalOpen));
     }
+    setIsModalOpen(null);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(null);
   };
 
   return (
     <div className="todo-list-container">
+      <Modal okText="Да" cancelText="Отменить"
+        onOk={handleOk}
+        onCancel={handleCancel}
+        open={!!isModalOpen}
+        title={`Удалить задачу?`} />
       <h1>Список задач</h1>
       <div className="todo-input-container">
         <input
