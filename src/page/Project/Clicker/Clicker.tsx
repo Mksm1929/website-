@@ -77,7 +77,7 @@ export const Clicker = () => {
         <button
           className="clicker-button click-button"
           onClick={handleClick}
-          disabled={second === 0}
+          disabled={second === -1 || second === 0}
         >
           Жми быстрей
         </button>

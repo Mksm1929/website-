@@ -1,15 +1,12 @@
 @font-face {
-  font-family: 'Wild';
-  src: url('./assets/fonts/Menyaka.ttf') format('truetype');
+  font-family: 'Menyaka';
+  src: url('./assets/fonts/Kintsugi.ttf') format('truetype');
 }
 @font-face {
   font-family: 'BlackOps';
   src: url('./assets/fonts/BlackOpsOne.ttf') format('truetype');
 }
-@font-face {
-  font-family: 'Porshe';
-  src: url('./assets/fonts/Porsche.ttf') format('truetype');
-}
+
 @font-face {
   font-family: 'Danger';
   src: url('./assets/fonts/Danger.ttf') format('truetype');
@@ -23,7 +20,6 @@
     position: absolute;
     top: 356px;
     width: 98%;
-    height: 100%;
 }
 
 .app-footer {

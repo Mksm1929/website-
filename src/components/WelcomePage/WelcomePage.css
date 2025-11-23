@@ -10,6 +10,10 @@
   border-bottom: 1px solid white;
 }
 
+.welcome-home {
+  border-bottom: 0px;
+}
+
 .welcome-frontend {
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -61,8 +65,23 @@
   padding-left: 5%;
 }
 
-.welcome img {
+.welcome-img {
   height: 390px;
+}
+
+.welcome-img-home {
+  height: 600px;
+  mask-image: radial-gradient(
+    circle at center,
+    black 40%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 870px) {
+  .welcome-img-home {
+    height: 100%;
+  }
 }
 
 .welcome-container-text {

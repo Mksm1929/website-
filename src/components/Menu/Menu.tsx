@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import type { MenuProps } from "antd";
-import { Menu } from "antd";
+import { Menu as Navigation } from "antd";
 import "./Menu.css";
 import { useNavigate } from "react-router-dom";
 import { DeploymentUnitOutlined, DesktopOutlined } from "@ant-design/icons";
@@ -21,7 +21,7 @@ const items: MenuItem[] = [
   },
 ];
 
-export const Project: React.FC = () => {
+export const Menu = () => {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
 
@@ -37,7 +37,7 @@ export const Project: React.FC = () => {
       onMouseLeave={() => setCollapsed(true)}
       style={{ maxWidth: 256, width: "fit-content" }}
     >
-      <Menu
+      <Navigation
         getPopupContainer={() => document.body}
         className="left-oriented-submenu"
         mode="horizontal"

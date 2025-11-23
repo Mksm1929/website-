@@ -1,12 +1,8 @@
 import './Skills.css';
 import { skillsData } from "./SkillsData";
 
-type Cards = {
-  cardName?: string,
-}
 
-export const Skills: React.FC<Cards> = () => {
-
+export const Skills = () => {
 
   return (
     <div className="cards">
@@ -23,7 +19,6 @@ export const Skills: React.FC<Cards> = () => {
         </div>
       })
       }
-
     </div>
   )
 }

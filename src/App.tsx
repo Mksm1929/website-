@@ -5,15 +5,18 @@ import { Router } from "./provider/router";
 import { Footer } from "./components/Footer/Footer";
 import "./AppCommon.css";
 import { About } from "./page/About/About";
+import { useLocation } from "react-router-dom";
 
 
 function App() {
+  const location = useLocation()
+
   return (
     <div className="app">
       <Header />
       <WelcomePage />
       <div className="app-content">
-        <About />
+        {location.pathname === "/Skills" && <About />}
         <Router />
         <div className="app-footer">
           <Footer />
