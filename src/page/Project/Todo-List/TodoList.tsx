@@ -17,7 +17,6 @@ export const TodoList: React.FC = () => {
     setInputValue(e.target.value);
   };
 
-
   const handleAddTodo = () => {
     if (inputValue.trim() !== "") {
       const newTodo = {

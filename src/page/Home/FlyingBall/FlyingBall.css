@@ -1,0 +1,43 @@
+.dvd-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 99vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+
+@media (max-width: 1150px) {
+    .home-container {
+        min-width: 40%;
+    }
+}
+
+@media (max-width: 870px) {
+    .home-container {
+        left: 0;
+        min-width: 100%;
+        top: 100px;
+        min-height: 200px;
+    }
+}
+
+.dvd-text {
+    position: absolute;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5vw;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50px;
+    transition: color 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    width: 50px;
+    height: 50px;
+}
+
+.dvd-text {
+    filter: drop-shadow(0 0 10px currentColor);
+}

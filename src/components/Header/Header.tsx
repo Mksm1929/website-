@@ -1,15 +1,16 @@
 import "./Header.css";
-import { Project } from "../Menu/Menu";
+import { Menu } from "../Menu/Menu";
+import { useNavigate } from "react-router-dom";
 
 
 export const Header = () => {
-
+  const navigate = useNavigate();
 
   return (
     <header className="header">
-      <span style={{ fontFamily: "BlackOps", fontSize: 20 }}>DEVELOPER</span>
+      <span className="cursor-pointer" onClick={()=> navigate("/")}>DEVELOPER</span>
       <nav className="header-nav">
-        <Project />
+        <Menu />
       </nav>
     </header>
   );

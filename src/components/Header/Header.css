@@ -1,11 +1,19 @@
 .header {
     display: flex;
     justify-content: space-between;
+    max-width: 100%;
 }
 
 .header span {
     color: #fff;
     animation: gentleGlow 4s ease-in-out infinite;
+    font-family: "Menyaka";
+}
+
+@media (max-width: 900px) {
+    .header span {
+        margin-left: 9%;
+    }
 }
 
 @keyframes gentleGlow {
