@@ -11,14 +11,10 @@ export interface Slide {
 
 interface SimpleSliderProps {
     slides: Slide[];
-    showDots?: boolean;
-    showArrows?: boolean;
 }
 
 export const SimpleSlider: React.FC<SimpleSliderProps> = ({
-    slides,
-    showDots = true,
-    showArrows = true
+    slides
 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -37,25 +33,22 @@ export const SimpleSlider: React.FC<SimpleSliderProps> = ({
     return (
         <div className="simple-slider">
             <div className="slider-container">
-                {showArrows && slides.length > 1 && (
-                    <>
-                        <button
-                            className="slider-arrow slider-arrow-prev"
-                            onClick={goToPrev}
-                            aria-label="Предыдущий слайд"
-                        >
-                            ‹
-                        </button>
-                        <button
-                            className="slider-arrow slider-arrow-next"
-                            onClick={goToNext}
-                            aria-label="Следующий слайд"
-                        >
-                            ›
-                        </button>
-                    </>
-                )}
-
+                <>
+                    <button
+                        className="slider-arrow slider-arrow-prev"
+                        onClick={goToPrev}
+                        aria-label="Предыдущий слайд"
+                    >
+                        ‹
+                    </button>
+                    <button
+                        className="slider-arrow slider-arrow-next"
+                        onClick={goToNext}
+                        aria-label="Следующий слайд"
+                    >
+                        ›
+                    </button>
+                </>
                 <div className="slides-wrapper">
                     {slides.map((slide, index) => (
                         <div
@@ -75,19 +68,16 @@ export const SimpleSlider: React.FC<SimpleSliderProps> = ({
                         </div>
                     ))}
                 </div>
-
-                {showDots && slides.length > 1 && (
-                    <div className="slider-dots">
-                        {slides.map((_, index) => (
-                            <button
-                                key={index}
-                                className={`dot ${index === currentIndex ? 'active' : ''}`}
-                                onClick={() => goToSlide(index)}
-                                aria-label={`Перейти к слайду ${index + 1}`}
-                            />
-                        ))}
-                    </div>
-                )}
+                <div className="slider-dots">
+                    {slides.map((_, index) => (
+                        <button
+                            key={index}
+                            className={`dot ${index === currentIndex ? 'active' : ''}`}
+                            onClick={() => goToSlide(index)}
+                            aria-label={`Перейти к слайду ${index + 1}`}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );
