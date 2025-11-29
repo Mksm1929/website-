@@ -11,7 +11,7 @@
   border-radius: 15px;
   position: relative;
   left: 20%;
-  top: 50px; 
+  top: 50px;
   width: 50%;
 }
 
@@ -136,9 +136,11 @@
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
+
   100% {
     transform: scale(1);
   }
@@ -150,9 +152,11 @@
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.2);
   }
+
   100% {
     transform: scale(1);
   }
@@ -217,25 +221,25 @@
     left: 2.2%;
     top: 70px;
   }
-  
+
   .clicker-title {
     font-size: 2rem;
   }
-  
+
   .timer-text {
     text-align: center;
     font-size: 1rem;
   }
-  
+
   .counter-text {
     font-size: 1rem;
   }
-  
+
   .buttons-container {
     align-items: center;
     width: 50%;
   }
-  
+
   .clicker-button {
     padding: 5px 10px;
     font-size: 10px;

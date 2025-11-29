@@ -20,15 +20,12 @@ const images: Slide[] = [
 
 export const Home = () => {
 
-
     return (
 
         <div>
             <FlyingBall />
             <SimpleSlider
                 slides={images}
-                showDots={true}
-                showArrows={true}
             />
         </div>
     )
