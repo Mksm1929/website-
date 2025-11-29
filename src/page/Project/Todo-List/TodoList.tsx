@@ -2,30 +2,29 @@
 import "./TodoList.css";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { addTodo, toggleTodo, deleteTodo } from "./todosSlice";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { KeyboardEvent } from 'react';
 import { Modal } from "antd";
 
 
 export const TodoList: React.FC = () => {
-  const [inputValue, setInputValue] = useState("");
   const [isModalOpen, setIsModalOpen] = useState<number | null>(null);
   const { todos } = useAppSelector((state) => state.todos);
   const dispatch = useAppDispatch();
-
-  const handleInputChange = (e: any) => {
-    setInputValue(e.target.value);
-  };
+    const inputRef = useRef<HTMLInputElement>(null)
 
   const handleAddTodo = () => {
-    if (inputValue.trim() !== "") {
+    const text = inputRef.current?.value.trim();
+    if (text && text !== "") {
       const newTodo = {
         id: Date.now(),
-        text: inputValue,
+        text: text,
         completed: false,
       };
       dispatch(addTodo(newTodo));
-      setInputValue("");
+      if (inputRef.current) {
+        inputRef.current.value = "";
+      }
     }
   };
 
@@ -53,7 +52,7 @@ export const TodoList: React.FC = () => {
   const handleCancel = () => {
     setIsModalOpen(null);
   };
-
+ 
   return (
     <div className="todo-list-container">
       <Modal okText="Да" cancelText="Отменить"
@@ -67,8 +66,7 @@ export const TodoList: React.FC = () => {
           onKeyPress={onKeyEnter}
           className="todo-input"
           type="text"
-          value={inputValue}
-          onChange={handleInputChange}
+          ref={inputRef}
           placeholder="Введите задачу..."
         />
         <button className="add-button" onClick={handleAddTodo}>
