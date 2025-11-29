@@ -59,6 +59,8 @@
     z-index: 11;
     cursor: pointer;
     transform: translateY(-50%);
+    background-clip: padding-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .slider-arrow:hover {
