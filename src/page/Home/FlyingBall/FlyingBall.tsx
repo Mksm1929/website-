@@ -7,7 +7,7 @@ export const FlyingBall = () => {
     const textRef = useRef<HTMLDivElement>(null);
 
     const positionRef = useRef({ x: 100, y: 100 });
-    const velocityRef = useRef({ x: 3, y: 2 });
+    const velocityRef = useRef({ x: 3, y: 3 });
     const requestRef = useRef<number | null>(null);
 
     const colors = [

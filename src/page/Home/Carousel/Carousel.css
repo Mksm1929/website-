@@ -45,7 +45,7 @@
     font-size: 1.5vw;
 }
 
-.slider-arrow {
+.arrow-button {
     -webkit-appearance: none;
     appearance: none;
     background: transparent;
@@ -63,17 +63,17 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-.slider-arrow:hover {
+.arrow-button:hover {
     transform: translateY(-50%);
     opacity: 1;
 }
 
-.slider-arrow-prev {
-    right: 110%;
+.arrow-button-prev {
+    left: -15%;
 }
 
-.slider-arrow-next {
-    left: 110%;
+.arrow-button-next {
+    right: -15%;
 }
 
 .slider-dots {
