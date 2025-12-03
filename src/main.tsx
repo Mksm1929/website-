@@ -10,13 +10,9 @@ import { store } from "./provider/store.ts";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </StrictMode>
 );
-
-
-// добавить навыки
-// добавить иконки к приложениям
