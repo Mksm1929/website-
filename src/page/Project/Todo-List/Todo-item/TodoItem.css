@@ -1,0 +1,77 @@
+.todo-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px 15px 0px;
+}
+
+.todo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+    background-color: rgb(54, 54, 54);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.todo-item-status {
+    width: 15px;
+    height: 100%;
+}
+
+.todo-item-status__completed {
+    background-color: #45a049 !important;
+}
+
+.todo-item-status__pending {
+    background-color: #707070;
+}
+
+.todo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.todo-text {
+    flex: 1;
+    cursor: pointer;
+    padding: 8px 0;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.delete-button {
+    padding: 8px 14px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #cc0000;
+    transform: scale(1.2);
+}
+
+.delete-button:active {
+    transform: translateY(1px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-150%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

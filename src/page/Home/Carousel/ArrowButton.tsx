@@ -9,8 +9,6 @@ interface ArrowButtonProps {
 }
 
 export const ArrowButton = memo(({ direction, onClick, ariaLabel, className }: ArrowButtonProps) => {
-    
-    console.log('ArrowButton mounted/updated');
 
     return (
         <>

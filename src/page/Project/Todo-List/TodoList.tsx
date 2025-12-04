@@ -2,18 +2,19 @@
 import "./TodoList.css";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { addTodo, toggleTodo, deleteTodo } from "./todosSlice";
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import type { KeyboardEvent } from 'react';
 import { Modal } from "antd";
+import { TodoItem } from "./Todo-item/TodoItem";
 
 
 export const TodoList: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<number | null>(null);
   const { todos } = useAppSelector((state) => state.todos);
   const dispatch = useAppDispatch();
-    const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleAddTodo = () => {
+  const handleAddTodo = useCallback(() => {
     const text = inputRef.current?.value.trim();
     if (text && text !== "") {
       const newTodo = {
@@ -26,33 +27,33 @@ export const TodoList: React.FC = () => {
         inputRef.current.value = "";
       }
     }
-  };
+  }, []);
 
-  const onKeyEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+  const onKeyEnter = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") return handleAddTodo()
-  };
+  }, []);
 
-  const handleToggleTodo = (id?: number) => {
+  const handleToggleTodo = useCallback((id?: number) => {
     if (id) {
       dispatch(toggleTodo(id));
     }
-  };
+  }, []);
 
-  const handleDeleteTodo = (id?: number) => {
+  const handleDeleteTodo = useCallback((id?: number) => {
     id !== undefined && setIsModalOpen(id);
-  };
+  }, []);
 
   const handleOk = () => {
     if (isModalOpen) {
       dispatch(deleteTodo(isModalOpen));
-    }
+    };
     setIsModalOpen(null);
   };
 
   const handleCancel = () => {
     setIsModalOpen(null);
   };
- 
+
   return (
     <div className="todo-list-container">
       <Modal okText="Да" cancelText="Отменить"
@@ -75,25 +76,7 @@ export const TodoList: React.FC = () => {
       </div>
       <ul className="todo-list">
         {todos.map((todo) => (
-          <li key={(todo.id)}>
-            <div className="todo">
-              <div className={`todo-item-status todo-item-status__${todo.completed ? "completed" : "pending"}`} />
-              <div className="todo-item" >
-                <span
-                  className="todo-text"
-                  onClick={() => handleToggleTodo(todo.id)}
-                >
-                  {todo.text}
-                </span>
-                <button
-                  className="delete-button"
-                  onClick={() => handleDeleteTodo(todo.id)}
-                >
-                  X
-                </button>
-              </div>
-            </div>
-          </li>
+          <TodoItem key={todo.id} todo={todo} onToggle={handleToggleTodo} onDelete={handleDeleteTodo} />
         ))}
       </ul>
     </div>
