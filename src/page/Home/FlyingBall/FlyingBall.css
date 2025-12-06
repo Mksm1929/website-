@@ -4,40 +4,124 @@
     right: 0;
     width: 99vw;
     height: 100vh;
-    z-index: -2;
-}
-
-
-@media (max-width: 1150px) {
-    .home-container {
-        min-width: 40%;
-    }
-}
-
-@media (max-width: 870px) {
-    .home-container {
-        left: 0;
-        min-width: 100%;
-        top: 100px;
-        min-height: 200px;
-    }
+    z-index: 1;
 }
 
 .dvd-text {
+    width: 100px;
+    height: 100px;
     position: absolute;
-    font-family: 'Arial', sans-serif;
-    font-size: 1.5vw;
-    font-weight: bold;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 50px;
-    transition: color 0.3s ease;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
     user-select: none;
-    width: 50px;
-    height: 50px;
+    transition: transform 0.2s ease;
+    opacity: 0.3;
+    background-color: black;
+    border-radius: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 0 10px currentColor);
 }
 
-.dvd-text {
-    filter: drop-shadow(0 0 10px currentColor);
+.dvd-text:hover {
+    transform: scale(1.1);
+}
+
+.dvd-text.burst {
+    animation: burstAnimation 0.5s ease-out forwards;
+}
+
+@keyframes burstAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.burst-particles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.burst-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: currentColor;
+    animation: particleFly 0.5s ease-out forwards;
+}
+
+@keyframes particleFly {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(calc(cos(var(--angle, 0deg)) * var(--distance, 50px)),
+                calc(sin(var(--angle, 0deg)) * var(--distance, 50px))) scale(0);
+        opacity: 0;
+    }
+}
+
+.burst-particle:nth-child(1) {
+    --angle: 0deg;
+    --distance: 60px;
+    animation-delay: 0s;
+}
+
+.burst-particle:nth-child(2) {
+    --angle: 45deg;
+    --distance: 70px;
+    animation-delay: 0.05s;
+}
+
+.burst-particle:nth-child(3) {
+    --angle: 90deg;
+    --distance: 65px;
+    animation-delay: 0.1s;
+}
+
+.burst-particle:nth-child(4) {
+    --angle: 135deg;
+    --distance: 75px;
+    animation-delay: 0.15s;
+}
+
+.burst-particle:nth-child(5) {
+    --angle: 180deg;
+    --distance: 60px;
+    animation-delay: 0.2s;
+}
+
+.burst-particle:nth-child(6) {
+    --angle: 225deg;
+    --distance: 70px;
+    animation-delay: 0.25s;
+}
+
+.burst-particle:nth-child(7) {
+    --angle: 270deg;
+    --distance: 65px;
+    animation-delay: 0.3s;
+}
+
+.burst-particle:nth-child(8) {
+    --angle: 315deg;
+    --distance: 75px;
+    animation-delay: 0.35s;
 }
