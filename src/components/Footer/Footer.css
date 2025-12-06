@@ -7,8 +7,16 @@
     font-size: 30px;
 }
 
+.footer-contact-icon-telegram {
+    width: 30px;
+}
+
 @media (max-width: 500px) {
     .footer-contact-icon {
         font-size: 23px;
+    }
+
+    .footer-contact-icon-telegram {
+        width: 23px;
     }
 }
