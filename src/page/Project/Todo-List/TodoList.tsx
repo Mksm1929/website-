@@ -1,8 +1,8 @@
 
 import "./TodoList.css";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
-import { addTodo, toggleTodo, deleteTodo } from "./todosSlice";
-import { useCallback, useRef, useState } from "react";
+import { addTodo, toggleTodo, deleteTodo, addTodos } from "./todosSlice";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { KeyboardEvent } from 'react';
 import { Modal } from "antd";
 import { TodoItem } from "./Todo-item/TodoItem";
@@ -13,6 +13,24 @@ export const TodoList: React.FC = () => {
   const { todos } = useAppSelector((state) => state.todos);
   const dispatch = useAppDispatch();
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const savedTodos = localStorage.getItem("todos");
+    if (savedTodos) {
+      try {
+        const parsedTodos = JSON.parse(savedTodos);
+        dispatch(addTodos(parsedTodos));
+      } catch (error) {
+        console.error("Ошибка при загрузке задач:", error);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (todos.length !== 0) {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+  }, [todos]);
 
   const handleAddTodo = useCallback(() => {
     const text = inputRef.current?.value.trim();
