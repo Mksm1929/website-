@@ -13,6 +13,7 @@ export const TodoList: React.FC = () => {
   const { todos } = useAppSelector((state) => state.todos);
   const dispatch = useAppDispatch();
   const inputRef = useRef<HTMLInputElement>(null);
+  const mountedRef = useRef(false);
 
   useEffect(() => {
     const savedTodos = localStorage.getItem("todos");
@@ -27,8 +28,10 @@ export const TodoList: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (todos.length !== 0) {
+    if (mountedRef.current) {
       localStorage.setItem("todos", JSON.stringify(todos));
+    } else {
+      mountedRef.current = true;
     }
   }, [todos]);
 
