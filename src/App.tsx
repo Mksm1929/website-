@@ -4,7 +4,7 @@ import { Header } from "./components/Header/Header";
 import { Router } from "./provider/router";
 import { Footer } from "./components/Footer/Footer";
 import "./AppCommon.css";
-import { About } from "./page/About/About";
+import { About } from "./page/skills/About/About";
 import { useLocation } from "react-router-dom";
 
 

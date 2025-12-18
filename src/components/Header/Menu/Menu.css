@@ -1,3 +1,8 @@
+.container-menu {
+     max-width: 256px;
+     width: "fit-content";
+}
+
 .ant-menu-horizontal {
      background-color: rgb(63, 63, 63);
      border-radius: 10px !important;
