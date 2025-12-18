@@ -5,8 +5,6 @@ import { Skills } from "../page/skills/Skills";
 import { Home } from "../page/Home/Home";
 
 
-
-
 export const Router = () => {
   return (
     <Routes>

@@ -1,4 +1,4 @@
-import { TextWriter } from "../../components/TextWriter";
+import { TextWriter } from "../TextWriter";
 import "./About.css";
 
 

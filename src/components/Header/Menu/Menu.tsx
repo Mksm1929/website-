@@ -1,25 +1,9 @@
 import { useState } from "react";
-
-import type { MenuProps } from "antd";
 import { Menu as Navigation } from "antd";
 import "./Menu.css";
 import { useNavigate } from "react-router-dom";
-import { DeploymentUnitOutlined, DesktopOutlined } from "@ant-design/icons";
+import { items } from "./MenuItem";
 
-type MenuItem = Required<MenuProps>["items"][number];
-
-const items: MenuItem[] = [
-  { key: "1", icon: <DeploymentUnitOutlined />, label: "Навыки", onClick: () => { } },
-  {
-    key: "sub1",
-    icon: <DesktopOutlined />,
-    label: "Проекты",
-    children: [
-      { key: "2", label: "Todo-List" },
-      { key: "3", label: "Clicker" },
-    ],
-  },
-];
 
 export const Menu = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -32,10 +16,9 @@ export const Menu = () => {
   };
 
   return (
-    <div
+    <div className="container-menu"
       onMouseEnter={() => setCollapsed(false)}
       onMouseLeave={() => setCollapsed(true)}
-      style={{ maxWidth: 256, width: "fit-content" }}
     >
       <Navigation
         getPopupContainer={() => document.body}
